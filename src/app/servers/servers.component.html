@@ -1,2 +1,35 @@
+<label>Server Name</label>
+
+<!-- one way (on event) Bind from input and call func in the class, then(on data) -->
+<input type="text" class="form-control" (input)="onUpdate($event)" />
+<hr />
+
+<!-- ngModel - Bind Two ways -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+<p>{{ serverName }}</p>
+<!-- <button
+  [disabled]="!allowNew"
+  class="btn btn-primary"
+  (click)="onCreateServer()"
+> 
+  Add Server
+</button>
+-->
+<p>{{ serverCreation }}</p>
+
 <app-server></app-server>
 <app-server></app-server>
+
+<!-- ngModel - Bind Two ways - assignment -->
+<hr />
+<input type="text" class="form-control" [(ngModel)]="username" />
+<button
+  [disabled]="username === ''"
+  class="btn btn-primary"
+  (click)="username = ''"
+>
+  Reset
+</button>
+
+<p>{{ username }}</p>
