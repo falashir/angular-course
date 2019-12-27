@@ -11,19 +11,30 @@ export class ServersComponent implements OnInit {
   serverCreation = "No Servers";
   serverName = "initName";
   username = "";
+  createServer = false;
+  servers = ['server 1'];
+  displayMark = true;
+  log = [];
 
   constructor() {
     setTimeout(() => {
-      this.resetNotAllow = true;
-    }, 1);
+      this.allowNew = true;
+    }, 1000);
   }
 
   ngOnInit() {}
 
   onCreateServer() {
     this.serverCreation = "There is New ONE and the name is " + this.serverName;
+    this.createServer = true;
+    this.servers.push(this.serverName);
   }
   onUpdate(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  displaySecret(){
+    this.displayMark = !this.displayMark;
+    this.log.push(Date());
   }
 }

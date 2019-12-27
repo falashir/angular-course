@@ -8,18 +8,19 @@
 <input type="text" class="form-control" [(ngModel)]="serverName" />
 
 <p>{{ serverName }}</p>
-<!-- <button
+<button
   [disabled]="!allowNew"
   class="btn btn-primary"
   (click)="onCreateServer()"
-> 
+>
   Add Server
 </button>
--->
-<p>{{ serverCreation }}</p>
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- <p>{{ serverCreation }}</p> -->
+<p *ngIf="createServer">Server "{{ serverName }}" is created</p>
+<!-- i can use else with *ng if -->
+
+<app-server *ngFor="let server of servers"></app-server>
 
 <!-- ngModel - Bind Two ways - assignment -->
 <hr />
@@ -31,5 +32,16 @@
 >
   Reset
 </button>
-
 <p>{{ username }}</p>
+
+<hr />
+<button class="btn btn-primary" (click)="displaySecret()">
+  Display Secret
+</button>
+<p *ngIf="!displayMark">Secret word =tuna</p>
+<div
+  *ngFor="let item of log; let i = index"
+  [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+>
+  {{ item }}
+</div>
