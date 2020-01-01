@@ -20,7 +20,10 @@
 <p *ngIf="createServer">Server "{{ serverName }}" is created</p>
 <!-- i can use else with *ng if -->
 
-<app-server *ngFor="let server of servers"></app-server>
+<app-server
+  *ngFor="let server of servers; let i = index"
+  (click)="onRemoveServer(i)"
+></app-server>
 
 <!-- ngModel - Bind Two ways - assignment -->
 <hr />
@@ -35,13 +38,17 @@
 <p>{{ username }}</p>
 
 <hr />
-<button class="btn btn-primary" (click)="displaySecret()">
+<button class="btn btn-primary btn-block" (click)="displaySecret()">
   Display Secret
 </button>
+
 <p *ngIf="!displayMark">Secret word =tuna</p>
+
 <div
   *ngFor="let item of log; let i = index"
   [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ afterFive: i >= 4 }"
+  
 >
   {{ item }}
 </div>

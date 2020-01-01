@@ -12,7 +12,7 @@ export class ServersComponent implements OnInit {
   serverName = "initName";
   username = "";
   createServer = false;
-  servers = ['server 1'];
+  servers = [];
   displayMark = true;
   log = [];
 
@@ -33,8 +33,15 @@ export class ServersComponent implements OnInit {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
 
-  displaySecret(){
+  displaySecret() {
     this.displayMark = !this.displayMark;
     this.log.push(Date());
+  }
+
+  onRemoveServer(id: number) {
+    this.servers.splice(id, 1);
+    // console.log(this.servers);
+    // console.log(id);
+    
   }
 }
