@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<div class="container">
   <div class="row">
     <div class="col-xs-12">
       <h3>Hi there</h3>
@@ -6,10 +6,11 @@
       <app-servers></app-servers>
     </div>
   </div>
-  
-  <hr/> -->
 
-
-<app-add-books (bookAdded)="onBookAdded($event)" (novelAdded)="onNovelAdded($event)"></app-add-books>
+  <hr/>
+ 
+  <app-add-books></app-add-books>
 <hr>
 <app-display-books *ngFor="let book of books" [book]="book"></app-display-books>
+</div>
+
