@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p>Add Book or Novel</p>
+        <label>Book or Novel Name</label>
+        <input type="text" class="form-control" [(ngModel)]="newName">
+
+        <label>Description</label>
+        <input type="text" class="form-control" [(ngModel)]="description">
+
+        <p>{{ newName }}</p>
+        <p>{{ description }}</p>
+        <button class="btn btn-primary" (click)="onAddBook()">Add Book</button>
+        <button class="btn btn-primary" (click)="onAddNovel()">Add Novel</button>
+    </div>
+</div>

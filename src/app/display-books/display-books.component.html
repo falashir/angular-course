@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">  </div>
+        <div class="panel-heading"> {{ book.name }} </div>
+        <div class="panel-body">
+            <p>
+                <strong *ngIf="book.type === 'book'" style="color: red">{{ book.description }} </strong>
+                <em *ngIf="book.type === 'novel'">{{ book.description }} </em>
+            </p>
+        </div>
+    </div>
+</div>
